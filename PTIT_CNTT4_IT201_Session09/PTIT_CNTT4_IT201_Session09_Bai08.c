@@ -65,7 +65,6 @@ int main() {
     int pos;
     printf("Nhap vi tri muon xoa: ");
     scanf("%d", &pos);
-
     head = deleteAtPosition(head, pos);
     printList(head);
 
