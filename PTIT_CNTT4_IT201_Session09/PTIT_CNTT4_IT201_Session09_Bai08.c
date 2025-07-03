@@ -62,7 +62,6 @@ int main() {
     head = insertAtTail(head, 5);
 
     printList(head);
-
     int pos;
     printf("Nhap vi tri muon xoa: ");
     scanf("%d", &pos);
