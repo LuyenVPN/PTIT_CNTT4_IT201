@@ -22,6 +22,7 @@ void printNode(Node *head) {
     }
     printf("NULL");
 }
+//xoa dau
 Node *deleteNode(Node *head){
     if (head== NULL) {
         return NULL;
@@ -34,6 +35,26 @@ Node *deleteNode(Node *head){
     free(current);
     return head;
 }
+// xoa cuoi
+Node *deleteLastNode(Node *head) {
+    if (head == NULL) {
+        return NULL;
+    }
+    if (head->next == NULL) {
+        free(head);
+        return NULL;
+    }
+
+    Node *current = head;
+    while (current->next != NULL) {
+        current = current->next;
+    }
+    current->prev->next = NULL;
+    free(current);
+
+    return head;
+}
+
 int main() {
     Node* head= createNode(10);
     Node* Node2= createNode(20);
@@ -50,7 +71,7 @@ int main() {
     Node5->prev=Node4;
     printNode(head);
     printf("\n Sau khi xoa:\n");
-    head=deleteNode(head);
+    head=deleteLastNode(head);
     printNode(head);
     return 0;
 }
